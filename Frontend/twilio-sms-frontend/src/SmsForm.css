@@ -1,0 +1,152 @@
+/* Base styling for the body */
+body {
+    background-color: #f5f7fa; /* Soft White */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Styling for the container */
+.sms-container {
+    max-width: 420px;
+    width: 100%;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff; /* Surface Color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #6200ea; /* Accent border at the top */
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure it's above any background elements */
+}
+
+.sms-container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Floating element for additional styling */
+.sms-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #6200ea;
+    transform: rotate(45deg);
+    opacity: 0.05;
+    z-index: -1; /* Push behind container to avoid overlapping inputs */
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #6200ea; /* Primary Color */
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    z-index: 2; /* Ensure text is above other elements */
+}
+
+/* Form styling */
+form {
+    display: grid;
+    gap: 20px;
+    z-index: 2; /* Ensure form elements are above any background elements */
+}
+
+/* Label styling */
+label {
+    color: #333333; /* Text Color */
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Enhanced input and textarea styling */
+input, textarea {
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f9fafb; /* Very Light Background */
+    transition: all 0.3s ease;
+    width: calc(100% - 36px); /* Adjusting for padding */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    z-index: 2; /* Ensure inputs are above any background elements */
+}
+
+input:focus, textarea:focus {
+    border-color: #03dac6; /* Secondary Color */
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(3, 218, 198, 0.2); /* Teal Glow */
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #6c757d; /* Muted Text Color */
+    opacity: 1; /* Ensures full opacity for compatibility */
+}
+
+/* Button styling */
+button {
+    padding: 14px;
+    background-color: #6200ea; /* Primary Color */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 2; /* Ensure button is above any background elements */
+}
+
+button:hover {
+    background-color: #3700b3; /* Darker Purple */
+    transform: translateY(-2px);
+}
+
+/* Button icon styling */
+button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Response message styling */
+.response {
+    margin-top: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    z-index: 2; /* Ensure response messages are above any background elements */
+}
+
+.response.success {
+    color: #28a745;
+    background-color: #eafaf1;
+    border: 1px solid #28a745;
+}
+
+.response.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #dc3545;
+}
